@@ -8,9 +8,9 @@ build: dockerignore
 run: build
 	docker run -it --rm -e PORT=$(PORT) -p $(PORT):$(PORT)  $(IMG)
 
-publish:
+publish: build
 	docker push $(IMG)
-	docker push $(IMG):$(VERSION
+	docker push $(IMG):$(VERSION)
 
 dockerignore:
 	@echo '*' > .dockerignore
